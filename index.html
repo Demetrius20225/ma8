@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>З Днем 8 Березня!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            transition: background 0.5s ease;
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+        }
+
+        h1 {
+            font-size: 8vw;
+            animation: bounce 2s infinite;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-shadow: 3px 3px 0 #ff6b6b, 6px 6px 0 #ff4757, 9px 9px 0 #ffcccc;
+            transform: perspective(500px) rotateX(20deg);
+            margin: 0;
+            margin-top: -10vh; /* Піднято текст вище */
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: perspective(500px) rotateX(20deg) translateY(0);
+            }
+            40% {
+                transform: perspective(500px) rotateX(20deg) translateY(-30px);
+            }
+            60% {
+                transform: perspective(500px) rotateX(20deg) translateY(-15px);
+            }
+        }
+
+        .eight {
+            display: inline-block;
+            position: relative;
+            width: 6vw; /* Зменшено розмір вісімки */
+            height: 12vw; /* Зменшено розмір вісімки */
+            margin: 0 2vw;
+        }
+
+        .eight .heart {
+            font-size: 1vw; /* Зменшено розмір сердечок */
+            color: #ff6b6b;
+            animation: float 3s ease-in-out infinite;
+            position: absolute;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .flowers {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .flower {
+            position: absolute;
+            font-size: 3vw;
+            animation: fall linear infinite;
+            transition: color 0.5s ease;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+
+        .confetti {
+            position: absolute;
+            width: 1vw;
+            height: 1vw;
+            background-color: #ffcc00;
+            animation: confetti-fall 5s linear infinite;
+            transition: background-color 0.5s ease;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-10vh) rotate(0deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 1vw;
+            height: 1vw;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: sparkle 1.5s infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .glow {
+            font-size: 3vw;
+            text-shadow: 0 0 10px #ff6b6b, 0 0 20px #ff6b6b, 0 0 30px #ff6b6b;
+            animation: glow 2s infinite alternate;
+            margin-top: 20px;
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px #ff6b6b, 0 0 20px #ff6b6b, 0 0 30px #ff6b6b;
+            }
+            100% {
+                text-shadow: 0 0 20px #ff6b6b, 0 0 40px #ff6b6b, 0 0 60px #ff6b6b;
+            }
+        }
+
+        .text-3d {
+            font-size: 8vw;
+            color: #fff;
+            text-shadow: 1px 1px 0 #ff6b6b, 2px 2px 0 #ff4757, 3px 3px 0 #ffcccc,
+                         4px 4px 0 #ff6b6b, 5px 5px 0 #ff4757, 6px 6px 0 #ffcccc,
+                         7px 7px 0 #ff6b6b, 8px 8px 0 #ff4757, 9px 9px 0 #ffcccc;
+            transform: perspective(500px) rotateX(20deg);
+        }
+
+        .rose {
+            position: absolute;
+            font-size: 5vw;
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 2vw;
+            color: #fff;
+            background-color: #ff6b6b;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #ff4757;
+            transform: scale(1.1);
+        }
+
+        .button:active {
+            transform: scale(0.95);
+        }
+
+        .wish-text {
+            font-size: 3vw;
+            margin-top: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .photo-container {
+            display: none;
+            position: absolute;
+            width: 20vw;
+            animation: movePhoto 5s linear infinite;
+        }
+
+        .photo-container img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+        }
+
+        @keyframes movePhoto {
+            0% {
+                top: 10%;
+                left: 10%;
+            }
+            25% {
+                top: 20%;
+                left: 80%;
+            }
+            50% {
+                top: 60%;
+                left: 50%;
+            }
+            75% {
+                top: 40%;
+                left: 20%;
+            }
+            100% {
+                top: 10%;
+                left: 10%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-3d">
+            З  
+            <div class="eight">
+                <!-- Верхнє коло вісімки -->
+                <div class="heart" style="top: 0; left: 30%;">❤️</div>
+                <div class="heart" style="top: 0; left: 60%;">❤️</div>
+                <div class="heart" style="top: 10%; left: 10%;">❤️</div>
+                <div class="heart" style="top: 10%; left: 80%;">❤️</div>
+                <div class="heart" style="top: 20%; left: 20%;">❤️</div>
+                <div class="heart" style="top: 20%; left: 70%;">❤️</div>
+                <div class="heart" style="top: 30%; left: 30%;">❤️</div>
+                <div class="heart" style="top: 30%; left: 60%;">❤️</div>
+                <div class="heart" style="top: 40%; left: 40%;">❤️</div>
+                <div class="heart" style="top: 40%; left: 50%;">❤️</div>
+
+                <!-- Нижнє коло вісімки -->
+                <div class="heart" style="top: 60%; left: 30%;">❤️</div>
+                <div class="heart" style="top: 60%; left: 60%;">❤️</div>
+                <div class="heart" style="top: 70%; left: 10%;">❤️</div>
+                <div class="heart" style="top: 70%; left: 80%;">❤️</div>
+                <div class="heart" style="top: 80%; left: 20%;">❤️</div>
+                <div class="heart" style="top: 80%; left: 70%;">❤️</div>
+                <div class="heart" style="top: 90%; left: 30%;">❤️</div>
+                <div class="heart" style="top: 90%; left: 60%;">❤️</div>
+                <div class="heart" style="top: 100%; left: 40%;">❤️</div>
+                <div class="heart" style="top: 100%; left: 50%;">❤️</div>
+            </div>
+            Березня!
+        </h1>
+        <p class="wish-text" id="wishText">Бажаю тобі щастя, здоров'я та натхнення!</p>
+
+        <!-- Кнопки з анімаціями -->
+        <div class="buttons">
+            <button class="button" onclick="changeTheme('linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%)', '#ff6b6b', 'Нехай кожен день буде наповнений радістю!', 'photo1')">🌼 Квіти</button>
+            <button class="button" onclick="changeTheme('linear-gradient(135deg, #6b6bff 0%, #c4f4fa 100%)', '#6b6bff', 'Нехай твоє серце завжди буде наповнене любов\'ю!', 'photo2')">🎉 Святкування</button>
+            <button class="button" onclick="changeTheme('linear-gradient(135deg, #ff6b6b 0%, #ffcccc 100%)', '#ff4757', 'Нехай кожен день приносить нове натхнення!', 'photo3')">💖 Любов</button>
+            <button class="button" onclick="changeTheme('linear-gradient(135deg, #ffcc00 0%, #ffeb3b 100%)', '#ffcc00', 'Ти найкраща! 💐', 'photo4')">🌟 Чарівність</button>
+        </div>
+
+        <!-- Контейнер для фото -->
+        <div class="photo-container" id="photo1">
+            <!-- Вставте своє фото тут -->
+            <img src="photo1.jpg" alt="Квіти">
+        </div>
+        <div class="photo-container" id="photo2">
+            <!-- Вставте своє фото тут -->
+            <img src="photo2.jpg" alt="Святкування">
+        </div>
+        <div class="photo-container" id="photo3">
+            <!-- Вставте своє фото тут -->
+            <img src="photo3.jpg" alt="Любов">
+        </div>
+        <div class="photo-container" id="photo4">
+            <!-- Вставте своє фото тут -->
+            <img src="photo4.jpg" alt="Чарівність">
+        </div>
+    </div>
+
+    <!-- Квіти, які падають -->
+    <div class="flowers">
+        <div class="flower" style="left: 10%; animation-duration: 5s;">🌸</div>
+        <div class="flower" style="left: 20%; animation-duration: 7s;">🌼</div>
+        <div class="flower" style="left: 30%; animation-duration: 6s;">🌺</div>
+        <div class="flower" style="left: 40%; animation-duration: 8s;">🌻</div>
+        <div class="flower" style="left: 50%; animation-duration: 9s;">🌷</div>
+        <div class="flower" style="left: 60%; animation-duration: 10s;">💐</div>
+    </div>
+
+    <!-- Конфетті -->
+    <div class="confetti-container">
+        <div class="confetti" style="left: 5%; animation-delay: 0s;"></div>
+        <div class="confetti" style="left: 15%; animation-delay: 1s;"></div>
+        <div class="confetti" style="left: 25%; animation-delay: 2s;"></div>
+        <div class="confetti" style="left: 35%; animation-delay: 3s;"></div>
+        <div class="confetti" style="left: 45%; animation-delay: 4s;"></div>
+        <div class="confetti" style="left: 55%; animation-delay: 5s;"></div>
+    </div>
+
+    <!-- Блискітки -->
+    <div class="sparkles">
+        <div class="sparkle" style="top: 10%; left: 10%;"></div>
+        <div class="sparkle" style="top: 20%; left: 20%;"></div>
+        <div class="sparkle" style="top: 30%; left: 30%;"></div>
+        <div class="sparkle" style="top: 40%; left: 40%;"></div>
+        <div class="sparkle" style="top: 50%; left: 50%;"></div>
+        <div class="sparkle" style="top: 60%; left: 60%;"></div>
+    </div>
+
+    <script>
+        // Функція для зміни теми
+        function changeTheme(background, flowerColor, newText, photoId) {
+            document.body.style.background = background;
+            document.querySelectorAll('.flower').forEach(flower => {
+                flower.style.color = flowerColor;
+            });
+            document.getElementById('wishText').textContent = newText;
+            showPhoto(photoId);
+        }
+
+        // Функція для показу фото
+        function showPhoto(photoId) {
+            const photoContainers = document.querySelectorAll('.photo-container');
+            photoContainers.forEach(container => {
+                container.style.display = 'none';
+            });
+            const photo = document.getElementById(photoId);
+            photo.style.display = 'block';
+        }
+
+        // Додаємо більше квітів, конфетті та блискіток
+        function createFlowers() {
+            const flowersContainer = document.querySelector('.flowers');
+            for (let i = 0; i < 10; i++) { // Збільшено кількість квітів
+                const flower = document.createElement('div');
+                flower.classList.add('flower');
+                flower.style.left = `${Math.random() * 100}%`;
+                flower.style.animationDuration = `${Math.random() * 5 + 5}s`;
+                flower.innerHTML = '🌸';
+                flowersContainer.appendChild(flower);
+            }
+        }
+
+        function createConfetti() {
+            const confettiContainer = document.querySelector('.confetti-container');
+            for (let i = 0; i < 20; i++) { // Збільшено кількість конфетті
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = `${Math.random() * 100}%`;
+                confetti.style.animationDelay = `${Math.random() * 5}s`;
+                confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                confettiContainer.appendChild(confetti);
+            }
+        }
+
+        function createSparkles() {
+            const sparklesContainer = document.querySelector('.sparkles');
+            for (let i = 0; i < 10; i++) { // Збільшено кількість блискіток
+                const sparkle = document.createElement('div');
+                sparkle.classList.add('sparkle');
+                sparkle.style.top = `${Math.random() * 100}%`;
+                sparkle.style.left = `${Math.random() * 100}%`;
+                sparkle.style.animationDelay = `${Math.random() * 2}s`;
+                sparklesContainer.appendChild(sparkle);
+            }
+        }
+
+        createFlowers();
+        createConfetti();
+        createSparkles();
+    </script>
+</body>
+</html>
